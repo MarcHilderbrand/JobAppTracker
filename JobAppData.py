@@ -9,6 +9,6 @@ class JobAppData():
     
     """
     def __init__(self, job_Title=None, date_applied=None, link_Job_Post=None):
-        self._job_Title=job_Title
+        self._job_title=job_Title
         self._date_applied=date_applied
         self._link_Job_Post=link_Job_Post

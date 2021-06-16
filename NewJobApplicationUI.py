@@ -4,7 +4,7 @@ from JobAppData import JobAppData
 
 class NewJobApplicationUI(tk.Tk):
     """
-    This is a form to fill out fields for a new job application
+    A form to fill out fields for a new job application
     """
 
     def __init__(self, appmgr):
@@ -16,15 +16,19 @@ class NewJobApplicationUI(tk.Tk):
         self.geometry("400x400")
 
         #This button should call the add_jobApp function in ApplicationManager with all the data from the form
-        btn_JobAPP = tk.Button(self, text = "New Application", bd=2, command=self.click_addJobApp)
-        btn_JobAPP.pack(side='top')
+        self.btn_JobAPP = tk.Button(self, text = "New Application", bd=2, command=self.click_addJobApp)
+        self.btn_JobAPP.pack(side='top')
+
+        #Job Title entry 
+        self.entry_jobTitle = tk.Entry(self)
+        self.entry_jobTitle.place(x=40, y=40)
 
     def click_addJobApp(self):
 
         #collect data from form
-        testvalue = 1
+        job_title = self.entry_jobTitle.get()
 
-        self.appmgr.add_jobApp(job_title = testvalue) #put data here
+        self.appmgr.add_jobApp(job_title=job_title) #put data here
 
     def closeWindow(self):
         self.destroy
@@ -39,4 +43,4 @@ if __name__ == "__main__":
     GUI = NewJobApplicationUI(testappmgr)
     GUI.mainloop()
 
-    print(testappmgr._JobApps)
+print(testappmgr._JobApps)

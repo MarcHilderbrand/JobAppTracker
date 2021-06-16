@@ -27,8 +27,8 @@ class JobApplicationManager():
             posting_link
         """
 
-        self._JobApps.append(JobAppData())
-        print(self._JobApps)
+        self._JobApps.append(JobAppData(job_Title=job_title))
+        print(job_title)
 
 
 
