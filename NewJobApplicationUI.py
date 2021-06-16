@@ -1,7 +1,8 @@
-import tkinter
+import tkinter as tk
+from tkinter import *
 from JobAppData import JobAppData
 
-class NewJobApplicationUI(tkinter.Tk):
+class NewJobApplicationUI(tk.Tk):
     """
     This is a form to fill out fields for a new job application
     """
@@ -15,12 +16,12 @@ class NewJobApplicationUI(tkinter.Tk):
         self.geometry("400x400")
 
         #This button should call the add_jobApp function in ApplicationManager with all the data from the form
-        btn_JobAPP = tkinter.Button(self, text = "New Application", bd=2, command=self.click_addJobApp)
+        btn_JobAPP = tk.Button(self, text = "New Application", bd=2, command=self.click_addJobApp)
         btn_JobAPP.pack(side='top')
 
     def click_addJobApp(self):
 
-        #collect data
+        #collect data from form
         testvalue = 1
 
         self.appmgr.add_jobApp(job_title = testvalue) #put data here
